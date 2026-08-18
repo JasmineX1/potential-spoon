@@ -1,0 +1,79 @@
+schema_version: "0.1"
+scene_id: null
+
+inputs:
+  base_image:
+    id: base
+    source: null
+    notes: null
+  reference_images: []
+  # Item shape:
+  # - id: ref-01
+  #   source: null
+  #   assigned_aspects: [lighting]
+  #   notes: null
+  user_semantics: []
+  # Item shape:
+  # - text: null
+  #   target: scene
+
+authority:
+  precedence:
+    - user_semantics
+    - base_image_for_spatial_properties
+    - explicitly_assigned_reference_aspects
+    - labeled_inference
+  overrides: []
+  conflicts: []
+
+scene:
+  geometry:
+    value: null
+    provenance: base_image
+  camera:
+    value: null
+    provenance: base_image
+  composition:
+    value: null
+    provenance: base_image
+  spatial_relationships:
+    value: null
+    provenance: base_image
+  project_elements: []
+  # Item shape:
+  # - name: null
+  #   description: null
+  #   provenance: base_image
+  #   confidence: null
+  materials: []
+  landscape: []
+  rendering_quality: null
+
+atmosphere:
+  time_of_day: null
+  weather_and_sky: null
+  light_character: null
+  emotional_tones: []
+  occupancy_character: null
+  era_character: null
+  presentation_tier: null
+  qualifiers: []
+  provenance: []
+
+prompt_compilation:
+  template_status: awaiting_user_template
+  template_id: null
+  unresolved_fields: []
+  final_prompt: null
+
+extensions:
+  cropping:
+    enabled: false
+  tiled_rendering:
+    enabled: false
+  image_generation:
+    enabled: false
+  stitching:
+    enabled: false
+  quality_control:
+    enabled: false
