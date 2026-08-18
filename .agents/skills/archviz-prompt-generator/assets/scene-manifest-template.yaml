@@ -27,6 +27,15 @@ authority:
   conflicts: []
 
 scene:
+  building:
+    attributes:
+      value: null
+      provenance: base_image
+      confidence: null
+    function:
+      value: null
+      provenance: inferred
+      confidence: null
   geometry:
     value: null
     provenance: base_image
@@ -39,32 +48,109 @@ scene:
   spatial_relationships:
     value: null
     provenance: base_image
-  project_elements: []
+  objects_and_structures: []
   # Item shape:
   # - name: null
-  #   description: null
+  #   location: null
+  #   relative_relationships: []
   #   provenance: base_image
   #   confidence: null
+  project_elements: []
+  # Item shape:
+  # - id: null
+  #   name: null
+  #   semantic_identity: null
+  #   description: null
+  #   location: null
+  #   visual_characteristics: []
+  #   preservation_priority: null
+  #   preserve_geometry: null
+  #   preserve_material_identity: null
+  #   continuity_required: null
+  #   high_risk_misinterpretations: []
+  #   provenance: null
+  #   confidence: null
   materials: []
+  # Item shape:
+  # - surface_or_object: null
+  #   likely_material: null
+  #   color: null
+  #   texture: null
+  #   finish: null
+  #   optical_properties: null
+  #   light_response: null
+  #   provenance: inferred
+  #   confidence: null
+  environment:
+    site_condition: null
+    circulation: null
+    building_context_relationship: null
   landscape: []
+  background:
+    layers: []
+    context: null
+    depth_composition: null
   rendering_quality: null
 
 atmosphere:
-  time_of_day: null
-  weather_and_sky: null
-  light_character: null
-  emotional_tones: []
-  occupancy_character: null
-  era_character: null
-  presentation_tier: null
-  qualifiers: []
-  provenance: []
+  time_of_day:
+    value: null
+    provenance: null
+    confidence: null
+  weather_and_sky:
+    value: null
+    provenance: null
+    confidence: null
+  natural_light:
+    direction: {value: null, provenance: null, confidence: null}
+    altitude: {value: null, provenance: null, confidence: null}
+    character: {value: null, provenance: null, confidence: null}
+    color_temperature: {value: null, provenance: null, confidence: null}
+  artificial_light:
+    interior: {value: null, provenance: null, confidence: null}
+    facade: {value: null, provenance: null, confidence: null}
+    landscape: {value: null, provenance: null, confidence: null}
+    commercial: {value: null, provenance: null, confidence: null}
+  color_palette: {value: null, provenance: null, confidence: null}
+  white_balance: {value: null, provenance: null, confidence: null}
+  saturation: {value: null, provenance: null, confidence: null}
+  contrast: {value: null, provenance: null, confidence: null}
+  atmospheric_depth: {value: null, provenance: null, confidence: null}
+  emotional_tones: {value: [], provenance: null, confidence: null}
+  occupancy_character: {value: null, provenance: null, confidence: null}
+  presentation_tier: {value: null, provenance: null, confidence: null}
+  qualifiers: {value: [], provenance: null, confidence: null}
 
 prompt_compilation:
-  template_status: awaiting_user_template
-  template_id: null
+  template_status: ready
+  template_id: archviz-v0.1
+  section_order:
+    - 主要提示词
+    - 色调和光线
+    - 建筑的特征
+    - 材质细节
+    - 环境与配景
+    - 负面提示词
+  fixed_opening: "根据这张图片生成一张建筑效果图，不要更换视角，严格遵守原图的构图, 超级写实，高级的建筑渲染图，高分辨率，高度详细，清晰对焦，8k resolution，masterpiece，intricate details，photorealistic，detailed texture，保留输入图像的视角和内容，将这张图像转换为"
+  main_prompt_sequence:
+    - image_content
+    - building_composition
+    - spatial_hierarchy
+    - architectural_objects
+    - rendering_quality_and_visualization_style
+  quality_intensifier: "超级写实，高级的建筑渲染图，高分辨率，高度详细，清晰对焦，8k resolution，masterpiece，intricate details，photorealistic，detailed texture"
   unresolved_fields: []
   final_prompt: null
+
+negative_constraints:
+  preservation:
+    - no_viewpoint_change
+    - no_composition_change
+    - no_unapproved_geometry_or_content_change
+    - no_material_inconsistency
+    - no_implausible_surface_or_glazing_response
+    - no_unsupported_invented_detail
+  scene_specific: []
 
 extensions:
   cropping:
